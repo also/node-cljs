@@ -1,0 +1,12 @@
+{
+  "name": "node-cljs",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/also/node-cljs"
+  },
+  "bin": "command.js",
+  "dependencies": {
+    "oog": "~0.1.3"
+  }
+}
