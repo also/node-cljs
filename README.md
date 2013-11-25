@@ -2,7 +2,15 @@
 
 [![Build Status](https://travis-ci.org/also/node-cljs.png?branch=master)](https://travis-ci.org/also/node-cljs)
 
-Run compiled ClojureScript code with node.js.
+Run compiled ClojureScript code with node.js. Skip `:target :nodejs` and `(set! *main-cli-fn* ...)` and call any exported function from the command line.
+
+## Install
+
+```
+npm install -g node-cljs
+```
+
+## Usage
 
 ```
 usage: node-cljs :output-to [-m namespace.main_fn [arg...]]
