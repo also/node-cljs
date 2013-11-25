@@ -10,7 +10,7 @@ before_script:
   - lein2 cljsbuild once
   - cd ..
 script:
-  - ./command.js clojurescript.test/target/cljs/unoptimized clojurescript.test/target/cljs/unoptimized.js -a -m cemerick.cljs.node.run_all_tests .+\\.[^p.]+
-  - ./command.js clojurescript.test/target/cljs/whitespace.js -m cemerick.cljs.node.run_all_tests .+\\.[^p.]+
-  - ./command.js clojurescript.test/target/cljs/simple.js -m cemerick.cljs.node.run_all_tests .+\\.[^p.]+
-  - ./command.js clojurescript.test/target/cljs/advanced.js -m cemerick.cljs.node.run_all_tests .+\\.[^p.]+
+  - ./command.js clojurescript.test/target/cljs/unoptimized clojurescript.test/target/cljs/unoptimized.js -a -m cemerick.cljs.node.runner "this.literal_js_was_evaluated = true" test/cemerick/cljs/test/extra_test_command_file.js
+  - ./command.js clojurescript.test/target/cljs/whitespace.js -m cemerick.cljs.node.runner "this.literal_js_was_evaluated = true" test/cemerick/cljs/test/extra_test_command_file.js
+  - ./command.js clojurescript.test/target/cljs/simple.js -m cemerick.cljs.node.runner "this.literal_js_was_evaluated = true" test/cemerick/cljs/test/extra_test_command_file.js
+  - ./command.js clojurescript.test/target/cljs/advanced.js -m cemerick.cljs.node.runner "this.literal_js_was_evaluated = true" test/cemerick/cljs/test/extra_test_command_file.js
