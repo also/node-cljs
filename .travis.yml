@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+  - "0.11"
+  - "0.10"
+  - "0.8"
+  - "0.6"
+before_script:
+  - npm install
+  - git clone https://github.com/also/clojurescript.test.git --branch node --depth 1
+  - lein2 cljsbuild once
+script:
+  - ./command.js clojurescript.test/target/cljs/unoptimized clojurescript.test/target/cljs/unoptimized.js -a -m cemerick.cljs.node.run_all_tests .+\\.[^p.]+
+  - ./command.js clojurescript.test/target/cljs/whitespace.js -m cemerick.cljs.node.run_all_tests .+\\.[^p.]+
+  - ./command.js clojurescript.test/target/cljs/simple.js -m cemerick.cljs.node.run_all_tests .+\\.[^p.]+
+  - ./command.js clojurescript.test/target/cljs/advanced.js -m cemerick.cljs.node.run_all_tests .+\\.[^p.]+
